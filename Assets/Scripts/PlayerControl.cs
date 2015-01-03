@@ -19,6 +19,9 @@ public class PlayerControl : MonoBehaviour
 	public bool grounded = false;			// Whether or not the player is grounded.
 	private Animator anim;					// Reference to the player's animator component.
 
+	private BackgroundScroller midLayer;
+	private BackgroundScroller frntLayer;
+
 
 	public static int currScore = 0; 		//Storing the collected coins
 	public static int levelScore = 5;		//Number of coing required for a specific level
@@ -28,6 +31,9 @@ public class PlayerControl : MonoBehaviour
 	void Awake(){
 		groundCheck = transform.Find("groundCheck");
 		anim = GetComponent<Animator>();
+		midLayer = GameObject.Find("Middle-layer").GetComponent<BackgroundScroller>();
+		frntLayer = GameObject.Find("Front-layer").GetComponent<BackgroundScroller>();
+
 	}
 
 
@@ -44,7 +50,12 @@ public class PlayerControl : MonoBehaviour
 
 	void FixedUpdate (){
 		if(Input.GetButtonDown("Jump")){
-			triedTut = true; //chech for finishing the tutorial
+			//check for finishing the tutorial
+			triedTut = true; 
+			//start the layers parallax scripts
+			midLayer.enabled = true;
+			frntLayer.enabled = true;
+
 			//hide the tutorial GUI layer
 		}
 

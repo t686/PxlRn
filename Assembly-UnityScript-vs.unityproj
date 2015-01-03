@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{ABE85856-CE89-419C-1ED7-284361772C77}</ProjectGuid>
+	<ProjectGuid>{59B5FF2E-4180-0E61-69B2-4545778D401C}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -46,7 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\GameMaster.js" />
      <Compile Include="Assets\Scripts\KillPlayer.js" />
      <Compile Include="Assets\Scripts\Parallax.js" />
      <Compile Include="Assets\Scripts\PlatformMove.js" />
