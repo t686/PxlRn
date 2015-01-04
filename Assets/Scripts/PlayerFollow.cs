@@ -7,7 +7,6 @@ public class PlayerFollow : MonoBehaviour {
 	public int distance;
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame

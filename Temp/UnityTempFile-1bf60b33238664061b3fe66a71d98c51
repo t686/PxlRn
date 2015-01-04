@@ -41,11 +41,9 @@
 -define:ENABLE_PROFILER
 -define:UNITY_EDITOR
 -define:UNITY_EDITOR_OSX
-'Assets/BackgroundScroller.cs'
-'Assets/Fading.cs'
+'Assets/Scripts/BackgroundScroller.cs'
 'Assets/Scripts/CallSpawn.cs'
 'Assets/Scripts/ChangeLevel.cs'
-'Assets/Scripts/CharacterControllerScript.cs'
 'Assets/Scripts/CollectLoot.cs'
 'Assets/Scripts/HUDScript.cs'
 'Assets/Scripts/PlayerControl.cs'

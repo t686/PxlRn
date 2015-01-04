@@ -49,5 +49,4 @@
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll'
 -i:UnityEditor
 'Assets/Scripts/KillPlayer.js'
-'Assets/Scripts/Parallax.js'
 'Assets/Scripts/PlatformMove.js'
