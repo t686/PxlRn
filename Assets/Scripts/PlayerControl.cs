@@ -42,7 +42,6 @@ public class PlayerControl : MonoBehaviour
 
 		if(Input.GetButtonDown("Jump") && grounded)
 			jump = true;
-
 	}
 
 
@@ -53,7 +52,6 @@ public class PlayerControl : MonoBehaviour
 			//start the layers parallax scripts
 			midLayer.enabled = true;
 			frntLayer.enabled = true;
-
 		}
 
 		if(tutorialDone){
@@ -80,7 +78,6 @@ public class PlayerControl : MonoBehaviour
 						audio.Play();
 					}
 				rigidbody2D.AddForce(new Vector2(0, jumpForce));
-
 				// Make sure the player can't jump again until the jump conditions from Update are satisfied.
 				jump = false;
 			}
