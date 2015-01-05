@@ -30,7 +30,7 @@ GameObject:
   - 81: {fileID: 8100000}
   - 114: {fileID: 11400002}
   - 82: {fileID: 8200000}
-  - 114: {fileID: 11443760}
+  - 114: {fileID: 11476650}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -48,8 +48,8 @@ GameObject:
   - 4: {fileID: 400004}
   - 212: {fileID: 21200000}
   - 61: {fileID: 6100000}
-  - 114: {fileID: 11400004}
   - 50: {fileID: 5000000}
+  - 114: {fileID: 11476652}
   m_Layer: 0
   m_Name: destructor
   m_TagString: destructor
@@ -71,7 +71,7 @@ GameObject:
   - 114: {fileID: 11400008}
   m_Layer: 0
   m_Name: Middle-layer
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,7 +86,7 @@ GameObject:
   - 4: {fileID: 400008}
   - 212: {fileID: 21200002}
   - 61: {fileID: 6100002}
-  - 114: {fileID: 11400006}
+  - 114: {fileID: 11476654}
   m_Layer: 0
   m_Name: destructor_2
   m_TagString: destructor
@@ -108,7 +108,7 @@ GameObject:
   - 114: {fileID: 11400010}
   m_Layer: 0
   m_Name: Front-layer
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,7 +159,7 @@ GameObject:
   - 114: {fileID: 11400016}
   m_Layer: 0
   m_Name: Back-layer
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,7 +236,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.39999998, y: -3.21000004, z: -2.4000001}
+  m_LocalPosition: {x: -1.39999998, y: -3.04999995, z: -2}
   m_LocalScale: {x: 11.6099997, y: 1.32784104, z: 1}
   m_Children: []
   m_Father: {fileID: 400012}
@@ -300,7 +300,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.26300001
+  orthographic size: 3.25999999
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -512,7 +512,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 851542015753c4f84a1fa86a36cdd69a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .300000012
+  m_Volume: .150000006
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -598,28 +598,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   distance: 3
---- !u!114 &11400004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22820dfb451414c8e8a078214a9887f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11400006
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22820dfb451414c8e8a078214a9887f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -631,7 +609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d451ab31b2084608810bdcc8720a0f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: .00499999989
+  speed: .00400000019
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -656,7 +634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: .00100000005
---- !u!114 &11443760
+--- !u!114 &11476650
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -664,9 +642,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2732a6964cd94e17b5ddb40c0d88702, type: 3}
+  m_Script: {fileID: 11500000, guid: bc6345e4846494bbb88165be4ef19334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ts: 0
+  paused: 0
+--- !u!114 &11476652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f49c83d22112b4dbebbb31a66ae2c375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spikesName: 
+--- !u!114 &11476654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f49c83d22112b4dbebbb31a66ae2c375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spikesName: 
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

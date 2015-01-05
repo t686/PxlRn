@@ -8,6 +8,8 @@ TagManager:
   - SpawnTrigger
   - TileSpawner
   - Loot
+  - GUI
+  - Background
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -45,4 +47,8 @@ TagManager:
   - name: Default
     userID: 0
     uniqueID: 0
+    locked: 0
+  - name: Platform
+    userID: 1
+    uniqueID: 1845704905
     locked: 0

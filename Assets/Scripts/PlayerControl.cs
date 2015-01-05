@@ -9,7 +9,7 @@ public class PlayerControl : MonoBehaviour
 
 	public Transform[] tiles;				//Array of tiles to build the level
 
-	public bool tutorialDone= false;			// Check if the user is not afk and ready to start the level
+	public bool tutorialDone= false;		// Check if the user is not afk and ready to start the level
 	public float moveForce = 365f;			// Amount of force added to move the player left and right.
 	public float maxSpeed = 5f;				// The fastest the player can travel in the x axis.
 	public float jumpForce = 1000f;			// Amount of force added when the player jumps.
@@ -18,19 +18,27 @@ public class PlayerControl : MonoBehaviour
 	public bool grounded = false;			// Whether or not the player is grounded.
 	private Animator anim;					// Reference to the player's animator component.
 
-	private BackgroundScroller midLayer;	//Variables for activating the layout scripts
-	private BackgroundScroller frntLayer;
+	private GameObject[] backgroundLayers;	//Variables for activating the layout scripts
 
-	public static int currScore = 0; 		//Storing the collected coins
-	public static int levelScore = 5;		//Number of coing required for a specific level
+	//Static variables are "connected" to the class (Player control) and not to an object
+
+	public static int currLoot = 0; 		//Storing the collected loot
+	public static int levelLoot = 5;		//Number of loot required for a specific level
+
+	public static double score = 0; 		//Storing players score
+	public static double scoreValue = 10;	//Score value for specific level
+
+	public static float restartDelay = 0.5f; //Time to wait after restarting the level
+
+	public static bool playerIsDead = false; //Checking if the player is alive
 
 	private int myLayerMask = 1;
 
 	void Awake(){
 		groundCheck = transform.Find("groundCheck");
 		anim = GetComponent<Animator>();
-		midLayer = GameObject.Find("Middle-layer").GetComponent<BackgroundScroller>();
-		frntLayer = GameObject.Find("Front-layer").GetComponent<BackgroundScroller>();
+
+		backgroundLayers = GameObject.FindGameObjectsWithTag("Background");
 
 	}
 
@@ -46,12 +54,13 @@ public class PlayerControl : MonoBehaviour
 
 
 	void FixedUpdate (){
-		if(Input.GetButtonDown("Jump")){
+		if(tutorialDone == false && Input.GetButtonDown("Jump")){
 			//check for finishing the tutorial
 			tutorialDone = true; 
 			//start the layers parallax scripts
-			midLayer.enabled = true;
-			frntLayer.enabled = true;
+			for(int i = 0; i<backgroundLayers.Length; i++){
+				backgroundLayers[i].GetComponent<BackgroundScroller>().enabled = true;
+			}
 		}
 
 		if(tutorialDone){

@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CollectLoot : MonoBehaviour {
+public class LootCollect : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.tag == "Player"){
-			PlayerControl.currScore += 1;
+			PlayerControl.currLoot += 1;
+			PlayerControl.score += PlayerControl.scoreValue;
 			audio.enabled = true;
 			audio.Play();
 			Destroy(this.gameObject);

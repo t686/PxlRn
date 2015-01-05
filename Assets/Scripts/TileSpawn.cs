@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SpawnScript : MonoBehaviour {
+public class TileSpawn : MonoBehaviour {
 
 	public GameObject[] tiles;
 	public GameObject finalTile;
