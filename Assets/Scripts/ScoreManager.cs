@@ -10,7 +10,6 @@ public class ScoreManager : MonoBehaviour {
 
 	void Awake() {
 		text = GetComponent<Text>();
-
 		//scoreCount = PlayerControl.score;
 	}
 

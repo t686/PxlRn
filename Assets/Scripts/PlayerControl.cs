@@ -7,8 +7,6 @@ public class PlayerControl : MonoBehaviour
 	[HideInInspector]
 	public bool jump = false;				// Condition for whether the player should jump.
 
-	public Transform[] tiles;				//Array of tiles to build the level
-
 	public bool tutorialDone= false;		// Check if the user is not afk and ready to start the level
 	public float moveForce = 365f;			// Amount of force added to move the player left and right.
 	public float maxSpeed = 5f;				// The fastest the player can travel in the x axis.

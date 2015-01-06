@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GamePause : MonoBehaviour {
 
-	public float ts;
+	public float TimeScale;
 	public bool paused;
 	private GameObject[] layers;
 
@@ -12,7 +12,7 @@ public class GamePause : MonoBehaviour {
 	}
 
 	void Start () {
-		ts = Time.timeScale;//1
+		TimeScale = Time.timeScale;//1
 	}
 
 	void Update () {
@@ -31,11 +31,12 @@ public class GamePause : MonoBehaviour {
 				for(int i = 0; i<layers.Length; i++){
 					layers[i].GetComponent<BackgroundScroller>().enabled = false;
 				}
+				//Show up GameMenu
 			}
 
 		}else {
-			if(Time.timeScale < ts){
-				Time.timeScale = ts;
+			if(Time.timeScale < TimeScale){
+				Time.timeScale = TimeScale;
 				audio.Play();
 				if(PlayerControl.playerIsDead == false){
 					for(int i = 0; i<layers.Length; i++){

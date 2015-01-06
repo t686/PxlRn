@@ -5,10 +5,15 @@ public class PlayerKill : MonoBehaviour {
 	
 	private Animator animGUI;
 	private Animator animHero;
-
-	//public bool playerIsDead;
-
+	private AudioSource[] sounds;
+	private AudioSource death;
+	
 	private GameObject[] layers;
+
+	void Start(){
+		sounds = GameObject.FindGameObjectWithTag("Player").GetComponents<AudioSource>();
+		death = sounds[1];
+	}
 
 
 	void OnTriggerEnter2D(Collider2D other){
@@ -29,6 +34,7 @@ public class PlayerKill : MonoBehaviour {
 				for(int i = 0; i<layers.Length; i++){
 					layers[i].GetComponent<BackgroundScroller>().enabled = false;
 				}
+				death.Play();
 			}
 		}else if(other.tag != "destructor"){
 			Destroy(other.gameObject);

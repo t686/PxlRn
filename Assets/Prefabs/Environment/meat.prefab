@@ -40,7 +40,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: .25999999
+  m_Radius: .256993771
   m_Center: {x: 0, y: 0}
 --- !u!82 &8200000
 AudioSource:
@@ -52,7 +52,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 635626f0bcfa24959bddf88f21b12573, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .349999994
   m_Pitch: 1
   Loop: 0
   Mute: 0
