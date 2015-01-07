@@ -29,8 +29,8 @@ GameObject:
   - 124: {fileID: 12400000}
   - 81: {fileID: 8100000}
   - 114: {fileID: 11400002}
-  - 82: {fileID: 8200000}
   - 114: {fileID: 11476650}
+  - 114: {fileID: 11451208}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -634,6 +634,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: .00100000005
+--- !u!114 &11451208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b5b709372bc441e5bd83440b85cf631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11476650
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -645,7 +656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc6345e4846494bbb88165be4ef19334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ts: 0
+  TimeScale: 0
   paused: 0
 --- !u!114 &11476652
 MonoBehaviour:
@@ -658,7 +669,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49c83d22112b4dbebbb31a66ae2c375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spikesName: 
 --- !u!114 &11476654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -670,7 +680,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49c83d22112b4dbebbb31a66ae2c375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spikesName: 
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

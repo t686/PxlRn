@@ -3,9 +3,16 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 	private GameObject[] allLoot; //array of Loot objects
+	public GameObject music;	  //The level music object
+	private GameObject isMusic;	  //To check if the music object exists
 
 	void Start(){
 		allLoot = GameObject.FindGameObjectsWithTag("Loot");
+		//Create a music object is one if absent
+		isMusic = GameObject.FindGameObjectWithTag("Music");
+		if(!isMusic){
+			Instantiate(music, Vector3.zero, Quaternion.identity);
+		}
 	}
 	
 	void FixedUpdate () {
