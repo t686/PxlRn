@@ -4,18 +4,19 @@ using System.Collections;
 
 public class ScoreManager : MonoBehaviour {
 
-	private int lootCount;
-	//private double scoreCount;
+	private float time = 0f;
+
 	Text text;
 
 	void Awake() {
 		text = GetComponent<Text>();
-		//scoreCount = PlayerControl.score;
 	}
 
-	void Update () {
-		lootCount = PlayerControl.currLoot;
-		text.text = "Meat: "+lootCount+"/"+PlayerControl.levelLoot;
-		//text.text = "Score: " + scoreCount;
+	void FixedUpdate () {
+		if(PlayerControl.isAlive){
+			time += Time.fixedDeltaTime;
+			float sec = Mathf.Round(time*100)/100;
+			text.text = sec.ToString();
+		}
 	}
 }

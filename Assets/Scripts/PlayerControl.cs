@@ -6,8 +6,10 @@ public class PlayerControl : MonoBehaviour
 	// For determining which way the player is currently facing.
 	[HideInInspector]
 	public bool jump = false;				// Condition for whether the player should jump.
+	[HideInInspector]
+	public static bool isAlive = false; 	// State if Dino is alive
 
-	public bool tutorialDone= false;		// Check if the user is not afk and ready to start the level
+	public bool tutorialDone = false;		// Check if the user is not afk and ready to start the level
 	public float moveForce = 365f;			// Amount of force added to move the player left and right.
 	public float maxSpeed = 5f;				// The fastest the player can travel in the x axis.
 	public float jumpForce = 1000f;			// Amount of force added when the player jumps.
@@ -20,11 +22,10 @@ public class PlayerControl : MonoBehaviour
 
 	//Static variables are "connected" to the class (Player control) and not to an object
 
-	public static int currLoot = 0; 		//Storing the collected loot
-	public static int levelLoot = 5;		//Number of loot required for a specific level
+	//public static int currLoot = 0; 		//Storing the collected loot
+	//public static int levelLoot = 5;		//Number of loot required for a specific level
 
 	public static double score = 0; 		//Storing players score
-	public static double scoreValue = 10;	//Score value for specific level
 
 	public static float restartDelay = 0.5f; //Time to wait after restarting the level
 
@@ -37,7 +38,6 @@ public class PlayerControl : MonoBehaviour
 		anim = GetComponent<Animator>();
 
 		backgroundLayers = GameObject.FindGameObjectsWithTag("Background");
-
 	}
 
 
@@ -46,8 +46,7 @@ public class PlayerControl : MonoBehaviour
 
 		grounded = Physics2D.Linecast(transform.position, groundCheck.position, myLayerMask);
 
-		if(Input.GetButtonDown("Jump") && grounded)
-			jump = true;
+		if(Input.GetButtonDown("Jump") && grounded) jump = true;
 	}
 
 
@@ -55,6 +54,7 @@ public class PlayerControl : MonoBehaviour
 		if(tutorialDone == false && Input.GetButtonDown("Jump")){
 			//check for finishing the tutorial
 			tutorialDone = true; 
+			isAlive = true;
 			//start the layers parallax scripts
 			for(int i = 0; i<backgroundLayers.Length; i++){
 				backgroundLayers[i].GetComponent<BackgroundScroller>().enabled = true;
@@ -81,9 +81,7 @@ public class PlayerControl : MonoBehaviour
 			
 			if(jump){
 				anim.SetTrigger("Jump");
-					if(!audio.isPlaying){
-						audio.Play();
-					}
+					if(!audio.isPlaying) audio.Play();
 				rigidbody2D.AddForce(new Vector2(0, jumpForce));
 				// Make sure the player can't jump again until the jump conditions from Update are satisfied.
 				jump = false;

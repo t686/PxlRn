@@ -2,12 +2,12 @@
 using System.Collections;
 
 public class GameManager : MonoBehaviour {
-	private GameObject[] allLoot; //array of Loot objects
+	//private GameObject[] allLoot; //array of Loot objects
 	public GameObject music;	  //The level music object
 	private GameObject isMusic;	  //To check if the music object exists
 
 	void Start(){
-		allLoot = GameObject.FindGameObjectsWithTag("Loot");
+		//allLoot = GameObject.FindGameObjectsWithTag("Loot");
 		//Create a music object is one if absent
 		isMusic = GameObject.FindGameObjectWithTag("Music");
 		if(!isMusic){
@@ -25,11 +25,11 @@ public class GameManager : MonoBehaviour {
 		}
 
 		//Destroy remaining loot if the required amount for level is achieved
-		if(PlayerControl.currLoot == PlayerControl.levelLoot){
+		/*if(PlayerControl.currLoot == PlayerControl.levelLoot){
 			for(int i=0;i<allLoot.Length;i++){
 				Destroy(allLoot[i]);
 			}
-		}
+		}*/
 	}
 
 	void RestartLevel(){

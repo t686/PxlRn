@@ -12,12 +12,6 @@ public class SpawnManager : MonoBehaviour {
 
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if(other.tag == "SpawnTrigger"){
-			if(PlayerControl.currLoot == PlayerControl.levelLoot){
-				tileSpawnScript.SpawnFinal();
-			}else{
-				tileSpawnScript.Spawn();
-			}		
-		}
+		if(other.tag == "SpawnTrigger") tileSpawnScript.Spawn();
 	}
 }

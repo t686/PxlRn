@@ -29,6 +29,7 @@ public class PlayerKill : MonoBehaviour {
 				animHero.SetTrigger("Dead");
 
 				Camera.main.GetComponent<PlayerFollow>().enabled = false;
+				PlayerControl.isAlive = false;
 
 				layers = GameObject.FindGameObjectsWithTag("Background");
 				for(int i = 0; i<layers.Length; i++){

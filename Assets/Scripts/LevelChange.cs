@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LevelChange : MonoBehaviour {
 	
-	void OnTriggerEnter2D(Collider2D other){
+/*	void OnTriggerEnter2D(Collider2D other){
 		if(other.tag == "Player"){
 			//Reseting the loot and score counters;
 			PlayerControl.score = 0;
@@ -19,5 +19,5 @@ public class LevelChange : MonoBehaviour {
 	void ChangeLevel(){
 		Application.LoadLevel(Application.loadedLevel + 1);
 	}
-	
+*/
 }

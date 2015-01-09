@@ -4,15 +4,9 @@ using System.Collections;
 public class TileSpawn : MonoBehaviour {
 
 	public GameObject[] tiles;
-	public GameObject finalTile;
-
-	//Instantiate a random Tile from obj array[];
+	
+	//Instantiate a random Tile from array[] tiles;
 	public void Spawn(){
 		Instantiate(tiles[Random.Range(0, tiles.Length)], transform.position, Quaternion.identity);
-	}
-	
-	//Instantiate the final Tile
-	public void SpawnFinal(){
-		Instantiate(finalTile, transform.position, Quaternion.identity);
 	}
 }

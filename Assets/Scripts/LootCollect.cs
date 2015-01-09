@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LootCollect : MonoBehaviour {
 
-	void OnTriggerEnter2D(Collider2D other){
+	/*void OnTriggerEnter2D(Collider2D other){
 		if(other.tag == "Player"){
 			if(PlayerControl.currLoot < PlayerControl.levelLoot) PlayerControl.currLoot += 1;
 			PlayerControl.score += PlayerControl.scoreValue;
@@ -14,5 +14,5 @@ public class LootCollect : MonoBehaviour {
 
 	void DestroyObject(){
 		Destroy(this.gameObject);
-	}
+	}*/
 }
