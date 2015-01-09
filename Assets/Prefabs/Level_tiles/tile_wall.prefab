@@ -11,8 +11,9 @@ GameObject:
   - 212: {fileID: 21200000}
   - 50: {fileID: 5000000}
   - 61: {fileID: 6100002}
+  - 114: {fileID: 11493896}
   m_Layer: 8
-  m_Name: FallingSand
+  m_Name: wallPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +30,9 @@ GameObject:
   - 212: {fileID: 21200002}
   - 50: {fileID: 5000002}
   - 61: {fileID: 6100004}
+  - 114: {fileID: 11493894}
   m_Layer: 8
-  m_Name: FallingSand
+  m_Name: wallPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,8 +64,9 @@ GameObject:
   - 212: {fileID: 21200004}
   - 50: {fileID: 5000004}
   - 61: {fileID: 6100006}
+  - 114: {fileID: 11493900}
   m_Layer: 8
-  m_Name: FallingSand
+  m_Name: wallPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,8 +83,9 @@ GameObject:
   - 212: {fileID: 21200006}
   - 50: {fileID: 5000006}
   - 61: {fileID: 6100000}
+  - 114: {fileID: 11493898}
   m_Layer: 8
-  m_Name: FallingSand
+  m_Name: wallPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -375,6 +379,50 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e2036f16e4d74f528df565863c9638e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11493894
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4920e71b51e49e04996c5405ceac983e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11493896
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4920e71b51e49e04996c5405ceac983e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11493898
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4920e71b51e49e04996c5405ceac983e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11493900
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4920e71b51e49e04996c5405ceac983e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &21200000
