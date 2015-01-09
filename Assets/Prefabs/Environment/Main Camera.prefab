@@ -584,6 +584,7 @@ MonoBehaviour:
   - {fileID: 100030, guid: 7f55de77e9ded49649dc7c2eb3242d93, type: 2}
   - {fileID: 100004, guid: e3992d542207f4cc1b2137c845fe2689, type: 2}
   - {fileID: 100008, guid: d65899d50b9df4965a7934f1aa3256ae, type: 2}
+  - {fileID: 110410, guid: c6fc010a3a5e22541aadaaff9b511e43, type: 2}
   finalTile: {fileID: 100004, guid: 16f95377531b645b0ad2dbd4ad44ad69, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
@@ -645,6 +646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b5b709372bc441e5bd83440b85cf631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  music: {fileID: 139266, guid: 985043e1bd7d740c693c3c2983f513af, type: 2}
 --- !u!114 &11476650
 MonoBehaviour:
   m_ObjectHideFlags: 1
