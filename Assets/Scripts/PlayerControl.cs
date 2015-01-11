@@ -15,7 +15,7 @@ public class PlayerControl : MonoBehaviour
 	public float jumpForce = 1000f;			// Amount of force added when the player jumps.
 
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
-	public bool grounded = false;			// Whether or not the player is grounded.
+	public bool isGrounded = false;			// Whether or not the player is grounded.
 	private Animator anim;					// Reference to the player's animator component.
 
 	private GameObject[] backgroundLayers;	//Variables for activating the layout scripts
@@ -40,13 +40,14 @@ public class PlayerControl : MonoBehaviour
 		backgroundLayers = GameObject.FindGameObjectsWithTag("Background");
 	}
 
+	void Start(){
+		myLayerMask = 1 << LayerMask.NameToLayer("Ground");
+	}
 
 	void Update(){
-		myLayerMask = 1 << LayerMask.NameToLayer("Ground");
+		isGrounded = Physics2D.Linecast(transform.position, groundCheck.position, myLayerMask);
 
-		grounded = Physics2D.Linecast(transform.position, groundCheck.position, myLayerMask);
-
-		if(Input.GetButtonDown("Jump") && grounded) jump = true;
+		if(Input.GetButtonDown("Jump") && isGrounded) jump = true;
 	}
 
 
