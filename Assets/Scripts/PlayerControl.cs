@@ -4,12 +4,12 @@ using System.Collections;
 public class PlayerControl : MonoBehaviour
 {
 	// For determining which way the player is currently facing.
-	[HideInInspector]
+	//[HideInInspector]
 	public bool jump = false;				// Condition for whether the player should jump.
-	[HideInInspector]
-	public static bool isAlive = false; 	// State if Dino is alive
+	public static bool playerIsRunning = false; 	// State if Dino is alive
+	public static bool playerIsDead = false; //Checking if the player is alive
 
-	public bool tutorialDone = false;		// Check if the user is not afk and ready to start the level
+	//public bool tutorialDone = false;		// Check if the user is not afk and ready to start the level
 	public float moveForce = 365f;			// Amount of force added to move the player left and right.
 	public float maxSpeed = 5f;				// The fastest the player can travel in the x axis.
 	public float jumpForce = 1000f;			// Amount of force added when the player jumps.
@@ -18,7 +18,7 @@ public class PlayerControl : MonoBehaviour
 	public bool isGrounded = false;			// Whether or not the player is grounded.
 	private Animator anim;					// Reference to the player's animator component.
 
-	private GameObject[] backgroundLayers;	//Variables for activating the layout scripts
+	//private GameObject[] backgroundLayers;	//Variables for activating the layout scripts
 
 	//Static variables are "connected" to the class (Player control) and not to an object
 
@@ -29,15 +29,19 @@ public class PlayerControl : MonoBehaviour
 
 	public static float restartDelay = 0.5f; //Time to wait after restarting the level
 
-	public static bool playerIsDead = false; //Checking if the player is alive
+
 
 	private int myLayerMask = 1;
 
 	void Awake(){
+		playerIsRunning = false;
+		playerIsDead = false;
+		GameManager.tutorialDone = false;
+
 		groundCheck = transform.Find("groundCheck");
 		anim = GetComponent<Animator>();
 
-		backgroundLayers = GameObject.FindGameObjectsWithTag("Background");
+		//backgroundLayers = GameObject.FindGameObjectsWithTag("Background");
 	}
 
 	void Start(){
@@ -52,17 +56,8 @@ public class PlayerControl : MonoBehaviour
 
 
 	void FixedUpdate (){
-		if(tutorialDone == false && Input.GetButtonDown("Jump")){
-			//check for finishing the tutorial
-			tutorialDone = true; 
-			isAlive = true;
-			//start the layers parallax scripts
-			for(int i = 0; i<backgroundLayers.Length; i++){
-				backgroundLayers[i].GetComponent<BackgroundScroller>().enabled = true;
-			}
-		}
 
-		if(tutorialDone){
+		if(GameManager.tutorialDone){
 			rigidbody2D.AddForce(Vector2.right * moveForce);
 
 			float h = Input.GetAxis("Horizontal");

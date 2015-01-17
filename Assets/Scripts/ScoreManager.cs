@@ -13,7 +13,7 @@ public class ScoreManager : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		if(PlayerControl.isAlive){
+		if(PlayerControl.playerIsRunning){
 			time += Time.fixedDeltaTime;
 			float sec = Mathf.Round(time*100)/100;
 			text.text = sec.ToString();
