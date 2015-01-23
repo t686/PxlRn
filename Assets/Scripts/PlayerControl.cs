@@ -8,6 +8,7 @@ public class PlayerControl : MonoBehaviour
 	public bool jump = false;				// Condition for whether the player should jump.
 	public static bool playerIsRunning = false; 	// State if Dino is alive
 	public static bool playerIsDead = false; //Checking if the player is alive
+	public static int tilesPassed = 1;		//Number of passed tiles
 
 	//public bool tutorialDone = false;		// Check if the user is not afk and ready to start the level
 	public float moveForce = 365f;			// Amount of force added to move the player left and right.
@@ -56,7 +57,6 @@ public class PlayerControl : MonoBehaviour
 
 
 	void FixedUpdate (){
-
 		if(GameManager.tutorialDone){
 			rigidbody2D.AddForce(Vector2.right * moveForce);
 

@@ -5,7 +5,7 @@ using System;
 
 public class ScoreManager : MonoBehaviour {
 
-	private float time = 0f;
+	public float time = 0f;
 	private int totalTime = 0;
 
 	Text text;
@@ -29,5 +29,9 @@ public class ScoreManager : MonoBehaviour {
 				text.text = Math.Round((double)sec, 2).ToString();
 			}
 		}
+	}
+
+	public float getTime(){
+		return time;
 	}
 }
