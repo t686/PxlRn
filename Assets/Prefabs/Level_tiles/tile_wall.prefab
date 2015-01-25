@@ -46,6 +46,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400004}
+  - 61: {fileID: 6174654}
   m_Layer: 0
   m_Name: tile_wall
   m_TagString: tile
@@ -101,7 +102,7 @@ GameObject:
   - 4: {fileID: 400010}
   m_Layer: 0
   m_Name: wall
-  m_TagString: Untagged
+  m_TagString: tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,7 +173,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.00632286, y: .0225134045, z: 0}
+  m_LocalPosition: {x: 79.6663895, y: 14.6169186, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400010}
@@ -370,6 +371,17 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: .0599999987, y: .0199999996}
   m_Center: {x: 0, y: 0}
+--- !u!61 &6174654
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 11.4569092, y: 6.97144508}
+  m_Center: {x: .0898361206, y: .715515137}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1

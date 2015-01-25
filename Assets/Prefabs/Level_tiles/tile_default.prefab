@@ -43,6 +43,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400004}
+  - 61: {fileID: 6147866}
   m_Layer: 0
   m_Name: tile_default
   m_TagString: tile
@@ -81,7 +82,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 86.7747421, y: 15.4805498, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -110,6 +111,17 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 11.5999994, y: 1}
   m_Center: {x: 0, y: 0}
+--- !u!61 &6147866
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 11.580019, y: 7.12330055}
+  m_Center: {x: 7.62939453e-06, y: .351268768}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1

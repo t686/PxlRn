@@ -25,6 +25,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400004}
+  - 61: {fileID: 6120552}
   m_Layer: 0
   m_Name: tile_fire
   m_TagString: tile
@@ -90,7 +91,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.0135555, y: .00919079781, z: 0}
+  m_LocalPosition: {x: 79.5999603, y: 15.8791494, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400006}
@@ -144,6 +145,17 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: .0599999987, y: .0199999996}
   m_Center: {x: 0, y: 0}
+--- !u!61 &6120552
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 11.523159, y: 7.10419416}
+  m_Center: {x: .0284500122, y: .360821724}
 --- !u!61 &6193310
 BoxCollider2D:
   m_ObjectHideFlags: 1
