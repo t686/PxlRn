@@ -31,6 +31,7 @@ public class SpawnManager : MonoBehaviour {
 				spawnCase = 2;
 			}
 
+
 			switch(spawnCase){
 			case 1:
 				tileSpawnScript.SpawnMediumTile();
