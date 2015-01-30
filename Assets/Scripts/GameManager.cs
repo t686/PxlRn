@@ -26,11 +26,12 @@ public class GameManager : MonoBehaviour {
 		//start level after jump
 		if(Input.GetButtonDown("Jump") && tutorialDone == false && PlayerControl.playerIsDead == false){
 
+			//PrepareRestart();
 			GamePause.pauseButton.SetActive(true);
 			tutorialDone = true; 
 			PlayerControl.playerIsRunning = true;
-
-
+			
+			
 			//start the layers parallax scripts
 			for(int i = 0; i<backgroundLayers.Length; i++){
 				backgroundLayers[i].GetComponent<BackgroundScroller>().enabled = true;
@@ -47,7 +48,32 @@ public class GameManager : MonoBehaviour {
 
 	}
 
-	void RestartLevel(){
+	public void PrepareRestart() {
+
+
+
+		GamePause.pauseButton.SetActive(true);
+		tutorialDone = true; 
+		PlayerControl.playerIsRunning = true;
+		
+		
+		//start the layers parallax scripts
+		for(int i = 0; i<backgroundLayers.Length; i++){
+			backgroundLayers[i].GetComponent<BackgroundScroller>().enabled = true;
+		}
+
+
+	}
+
+	public void RestartLevel(){
+
+		//Invoke ("PrepareRestart", PlayerControl.restartDelay);
+		PrepareRestart ();
 		Application.LoadLevel(Application.loadedLevel);
 	}
+
+	public void OnExit() {
+		Application.LoadLevel("MainMenu");
+	}
+
 }
