@@ -15,6 +15,9 @@ public class PlayerKill : MonoBehaviour {
 		playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
 		backgroundLayers = GameObject.FindGameObjectsWithTag("Background");
 
+		animHero = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+		animGUI = GameObject.FindGameObjectWithTag("GUI").GetComponent<Animator>();
+
 		sounds = GameObject.FindGameObjectWithTag("Player").GetComponents<AudioSource>();
 		death = sounds[1];
 	}
@@ -22,15 +25,13 @@ public class PlayerKill : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.tag == "Player"){
 			if(!PlayerControl.playerIsDead == true){
-	
+				
 				PlayerControl.playerIsDead = true;
+				PlayerControl.tilesPassed = 0;
 
-
-				animGUI = GameObject.FindGameObjectWithTag("GUI").GetComponent<Animator>();
 				animGUI.SetTrigger("GameOver");
 
 				playerScript.moveForce = 0;
-				animHero = other.GetComponent<Animator>();
 				animHero.SetTrigger("Dead");
 
 				Camera.main.GetComponent<PlayerFollow>().enabled = false;
