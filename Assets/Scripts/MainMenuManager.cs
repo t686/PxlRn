@@ -16,4 +16,8 @@ public class MainMenuManager : MonoBehaviour {
 	void ChangeLevel(){
 		Application.LoadLevel("GameLevel01");
 	}
+
+	public void OnAbout() {
+		Application.LoadLevel ("About");
+	}
 }
