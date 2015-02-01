@@ -232,7 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jump: 0
   moveForce: 100
-  maxSpeed: 4.5
+  maxSpeed: 4
   jumpForce: 900
   isGrounded: 0
 --- !u!212 &21200000

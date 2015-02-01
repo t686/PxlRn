@@ -38,7 +38,7 @@ public class GamePause : MonoBehaviour {
 		if(paused){
 			if(Time.timeScale > 0.0){
 				Time.timeScale = 0.0f;
-				music.Pause();
+				//music.Pause();
 				for(int i = 0; i<layers.Length; i++){
 					layers[i].GetComponent<BackgroundScroller>().enabled = false;
 				}
@@ -47,7 +47,7 @@ public class GamePause : MonoBehaviour {
 		}else {
 			if(Time.timeScale < TimeScale){
 				Time.timeScale = TimeScale;
-				music.Play();
+				//music.Play();
 				if(PlayerControl.playerIsDead == false){
 					for(int i = 0; i<layers.Length; i++){
 						layers[i].GetComponent<BackgroundScroller>().enabled = true;
