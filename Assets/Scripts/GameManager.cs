@@ -11,15 +11,18 @@ public class GameManager : MonoBehaviour {
 	
 	void Awake(){
 		backgroundLayers = GameObject.FindGameObjectsWithTag("Background");
+		//Create a music object is one if absent
+		isMusic = GameObject.FindGameObjectWithTag("Music");
 	}
 	
 	void Start(){
-		
-		//Create a music object is one if absent
-		isMusic = GameObject.FindGameObjectWithTag("Music");
+
 		if(!isMusic){
 			Instantiate(music, Vector3.zero, Quaternion.identity);
+
 		}
+		isMusic = GameObject.FindGameObjectWithTag("Music");
+
 	}
 	
 	void FixedUpdate () {
