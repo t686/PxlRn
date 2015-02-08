@@ -9,10 +9,10 @@ public class PlayerControl : MonoBehaviour
 	public static bool playerIsRunning = false; 	// State if Dino is alive
 	public static bool playerIsDead = false; //Checking if the player is alive
 	public static int tilesPassed = 1;		//Number of passed tiles
+	public static float maxSpeed = 4f;				// The fastest the player can travel in the x axis.
 
 	//public bool tutorialDone = false;		// Check if the user is not afk and ready to start the level
 	public float moveForce = 365f;			// Amount of force added to move the player left and right.
-	public float maxSpeed = 5f;				// The fastest the player can travel in the x axis.
 	public float jumpForce = 1000f;			// Amount of force added when the player jumps.
 
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
