@@ -42,6 +42,8 @@ public class PlayerControl : MonoBehaviour
 		groundCheck = transform.Find("groundCheck");
 		anim = GetComponent<Animator>();
 
+		// Setting Sound mute
+		audio.volume = PlayerPrefs.GetFloat ("SoundVolume")*0.7f;
 		//backgroundLayers = GameObject.FindGameObjectsWithTag("Background");
 	}
 
