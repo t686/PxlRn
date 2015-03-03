@@ -20,6 +20,7 @@ public class PlayerKill : MonoBehaviour {
 
 		sounds = GameObject.FindGameObjectWithTag("Player").GetComponents<AudioSource>();
 		death = sounds[1];
+		death.volume = PlayerPrefs.GetFloat ("SoundVolume")*0.7f;
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
