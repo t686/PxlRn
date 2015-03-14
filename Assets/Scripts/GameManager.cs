@@ -9,8 +9,6 @@ public class GameManager : MonoBehaviour {
 	private GameObject isMusic;	  			//To check if the music object exists
 	private GameObject[] backgroundLayers;	//Variables for activating the layout scripts
 
-	private AudioSource m;
-	
 	void Awake(){
 		backgroundLayers = GameObject.FindGameObjectsWithTag("Background");
 		//Create a music object is one if absent

@@ -7,8 +7,6 @@ public class MainMenuManager : MonoBehaviour {
 	public GameObject cutScene;
 	private AudioSource mMusic;
 
-	private SettingsManager mSettings = new SettingsManager();
-	
 	void Awake() {
 
 		mMusic = GameObject.FindGameObjectWithTag ("Music").audio;
