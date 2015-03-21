@@ -1,9 +1,17 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class MainMenuManager : MonoBehaviour {
 
 	public GameObject cutScene;
+	private AudioSource mMusic;
+
+	void Awake() {
+
+		mMusic = GameObject.FindGameObjectWithTag ("Music").audio;
+		mMusic.volume = PlayerPrefs.GetFloat ("MusicVolume");
+	}
 
 	public void StartButton(){
 		Color cutSceneOpacity = cutScene.GetComponent<SpriteRenderer>().color;
@@ -15,6 +23,10 @@ public class MainMenuManager : MonoBehaviour {
 
 	void ChangeLevel(){
 		Application.LoadLevel("GameLevel01");
+	}
+
+	public void OnSettings() {
+		Application.LoadLevel ("Settings");
 	}
 
 	public void OnAbout() {
