@@ -14,8 +14,6 @@ public class GamePause : MonoBehaviour {
 
 	public static GameObject pauseButton; //Reference to the Pause button from GUI
 
-
-
 	void Awake () {
 		layers = GameObject.FindGameObjectsWithTag("Background");
 		pauseButton = GameObject.Find("PauseButton");
@@ -28,13 +26,11 @@ public class GamePause : MonoBehaviour {
 	void Start () {
 		TimeScale = Time.timeScale;//1
 
-
 	}
 
 	void Update () {
 		if(!music) music = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>();
-
-	
+			
 		if(paused){
 			if(Time.timeScale > 0.0){
 				Time.timeScale = 0.0f;
@@ -43,7 +39,6 @@ public class GamePause : MonoBehaviour {
 					layers[i].GetComponent<BackgroundScroller>().enabled = false;
 				}
 			}
-
 		}else {
 			if(Time.timeScale < TimeScale){
 				Time.timeScale = TimeScale;
