@@ -9,7 +9,7 @@ public class MainMenuManager : MonoBehaviour {
 
 	void Awake() {
 
-		mMusic = GameObject.FindGameObjectWithTag ("Music").audio;
+		mMusic = GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource>();
 		mMusic.volume = PlayerPrefs.GetFloat ("MusicVolume");
 	}
 

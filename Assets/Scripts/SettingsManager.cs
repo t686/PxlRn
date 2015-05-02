@@ -18,7 +18,7 @@ public class SettingsManager : MonoBehaviour {
 
 	void Awake() {
 
-		music = GameObject.FindGameObjectWithTag ("Music").audio;
+		music = GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource>();
 		if (PlayerPrefs.GetFloat("MusicVolume") == 0f)
 			cbMusic.isOn = false;
 		music.volume = PlayerPrefs.GetFloat ("MusicVolume");
@@ -29,12 +29,12 @@ public class SettingsManager : MonoBehaviour {
 
 	void Update() {
 		if(cbMusic.isOn) {
-			music = GameObject.FindGameObjectWithTag("Music").audio;
+			music = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>();
 			music.volume = 1.0f;
 			PlayerPrefs.SetFloat("MusicVolume", 1.0f);
 		}
 		else {
-			music = GameObject.FindGameObjectWithTag("Music").audio;
+			music = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>();
 			music.volume = 0f;
 			PlayerPrefs.SetFloat("MusicVolume", 0f);
 		}
