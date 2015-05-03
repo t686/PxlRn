@@ -30,6 +30,8 @@ public class PlayerControl : MonoBehaviour
 
 	public static float restartDelay = 0.5f; //Time to wait after restarting the level
 
+	private int min = 1;
+	private int max = 11;
 
 
 	private int myLayerMask = 1;
@@ -78,7 +80,12 @@ public class PlayerControl : MonoBehaviour
 				GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Sign(GetComponent<Rigidbody2D>().velocity.x) * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
 			
 			if(jump){
-				anim.SetTrigger("Jump");
+
+				if (Random.Range(min, max) >= 9)
+				    anim.SetTrigger("Salto");
+				else
+					anim.SetTrigger("Jump");
+				
 					if(!GetComponent<AudioSource>().isPlaying) GetComponent<AudioSource>().Play();
 				GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
 				// Make sure the player can't jump again until the jump conditions from Update are satisfied.
