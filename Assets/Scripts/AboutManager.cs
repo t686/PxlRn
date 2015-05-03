@@ -7,7 +7,7 @@ public class AboutManager : MonoBehaviour {
 	private AudioSource mMusic;
 
 	void Awake() {
-		mMusic = GameObject.FindGameObjectWithTag ("Music").audio;
+		mMusic = GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource>();
 		mMusic.volume = PlayerPrefs.GetFloat ("MusicVolume");
 	}
 

@@ -43,7 +43,7 @@ public class PlayerControl : MonoBehaviour
 		anim = GetComponent<Animator>();
 
 		// Setting Sound mute
-		audio.volume = PlayerPrefs.GetFloat ("SoundVolume")*0.7f;
+		GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat ("SoundVolume")*0.7f;
 		//backgroundLayers = GameObject.FindGameObjectsWithTag("Background");
 	}
 
@@ -60,7 +60,7 @@ public class PlayerControl : MonoBehaviour
 
 	void FixedUpdate (){
 		if(GameManager.tutorialDone){
-			rigidbody2D.AddForce(Vector2.right * moveForce);
+			GetComponent<Rigidbody2D>().AddForce(Vector2.right * moveForce);
 
 			float h = Input.GetAxis("Horizontal");
 			//Touch myJump = Input.GetTouch(0);
@@ -68,19 +68,19 @@ public class PlayerControl : MonoBehaviour
 			anim.SetFloat("hSpeed", Mathf.Abs(h));
 
 			// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
-			if(h * rigidbody2D.velocity.x < maxSpeed)
+			if(h * GetComponent<Rigidbody2D>().velocity.x < maxSpeed)
 				// ... add a force to the player.
-				rigidbody2D.AddForce(Vector2.right * h * moveForce);
+				GetComponent<Rigidbody2D>().AddForce(Vector2.right * h * moveForce);
 
 			// If the player's horizontal velocity is greater than the maxSpeed...
-			if(Mathf.Abs(rigidbody2D.velocity.x) > maxSpeed)
+			if(Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x) > maxSpeed)
 				// ... set the player's velocity to the maxSpeed in the x axis.
-				rigidbody2D.velocity = new Vector2(Mathf.Sign(rigidbody2D.velocity.x) * maxSpeed, rigidbody2D.velocity.y);
+				GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Sign(GetComponent<Rigidbody2D>().velocity.x) * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
 			
 			if(jump){
 				anim.SetTrigger("Jump");
-					if(!audio.isPlaying) audio.Play();
-				rigidbody2D.AddForce(new Vector2(0, jumpForce));
+					if(!GetComponent<AudioSource>().isPlaying) GetComponent<AudioSource>().Play();
+				GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
 				// Make sure the player can't jump again until the jump conditions from Update are satisfied.
 				jump = false;
 			}

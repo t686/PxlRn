@@ -7,11 +7,9 @@ public class MainMenuManager : MonoBehaviour {
 	public GameObject cutScene;
 	private AudioSource mMusic;
 
-	private SettingsManager mSettings = new SettingsManager();
-	
 	void Awake() {
 
-		mMusic = GameObject.FindGameObjectWithTag ("Music").audio;
+		mMusic = GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource>();
 		mMusic.volume = PlayerPrefs.GetFloat ("MusicVolume");
 	}
 
