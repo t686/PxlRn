@@ -13,10 +13,13 @@ public class GameManager : MonoBehaviour {
 	private int settingID;
 
 
+	public GameObject shareButton;
+
 
 	void Awake(){
 		//Get the `random` setting for level
 		SetEnvironment(tileSpawners);
+
 
 		backgroundLayers = GameObject.FindGameObjectsWithTag("Background");
 		//Create a music object if one is absent
@@ -58,6 +61,7 @@ public class GameManager : MonoBehaviour {
 		
 		//Restart the game after a "Tap" if a player is previously dead
 		if(PlayerControl.playerIsDead){
+			shareButton.SetActive(true);
 			if(Input.GetButtonDown("Jump")){
 				Invoke ("RestartLevel", PlayerControl.restartDelay);
 			}
@@ -109,5 +113,18 @@ public class GameManager : MonoBehaviour {
 	public void OnExit(){
 		Destroy(isMusic);
 		Application.LoadLevel("MainMenu");
+	}
+
+	public void OnShare(){
+		if (FB.IsLoggedIn) {
+			FB.Feed (
+				linkCaption: "I`ve scored *** points! Try to beat me :)",
+				picture: "https://s-media-cache-ak0.pinimg.com/236x/54/47/8b/54478b6abece52c607dcc2c91418ecf4.jpg",
+				linkName: "Check out this game"
+			);
+		} else {
+			Debug.Log("User is not logged in!");
+			/*GameManager.*/shareButton.SetActive (false);
+		}
 	}
 }
