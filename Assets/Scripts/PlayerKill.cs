@@ -8,12 +8,15 @@ public class PlayerKill : MonoBehaviour {
 	private AudioSource[] sounds;
 	private AudioSource death;
 	private PlayerControl playerScript;
-	
+
+
 	private GameObject[] backgroundLayers;
+
 
 	void Start(){
 		playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
 		backgroundLayers = GameObject.FindGameObjectsWithTag("Background");
+
 
 		animHero = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
 		animGUI = GameObject.FindGameObjectWithTag("GUI").GetComponent<Animator>();
@@ -46,6 +49,11 @@ public class PlayerKill : MonoBehaviour {
 					backgroundLayers[i].GetComponent<BackgroundScroller>().enabled = false;
 				}
 				death.Play();
+
+				//GameManager.shareButton.SetActive(true);
+
+
+
 			}
 		}else if(other.tag != "destructor"){
 			Destroy(other.gameObject);
